@@ -16,7 +16,8 @@ public class Main {
 	public static void main(String[] args) {
 		options.addOption("C", "config", true, "security configuration file");
 		options.addOption("c", "command", true, "the command to run");
-		options.addOption("D", "defaults", false, "set default permissions");
+		options.addOption("D", "defaults", false, "set default permissions, implied when -c omitted");
+		options.addOption("r", "restore", true, "file, if exists to restore full program configuration, otherwise created");
 		options.addOption("?", "help", false, "print this help message");
 		
 		CommandLineParser parser = new DefaultParser();
@@ -31,6 +32,7 @@ public class Main {
 			showHelp();
 		}
 		
+		new Chei();
 	}
 	
 	public static void showHelp() {
