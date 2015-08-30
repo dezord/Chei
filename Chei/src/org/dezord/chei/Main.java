@@ -10,6 +10,8 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
+import com.esotericsoftware.yamlbeans.YamlException;
+
 public class Main {
 	public static CommandLine parser;
 	public static Options options = new Options();
@@ -17,7 +19,7 @@ public class Main {
 	public static String syntax = "chei -c <command>";
 	public static boolean defaultPerms = false;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		options.addOption("C", "config", true, "security configuration file");
 		options.addOption("c", "command", true, "the command to run");
 		options.addOption("D", "defaults", false, "set default permissions, implied when -c omitted");
